@@ -6,7 +6,6 @@
 
 #include "Window.hpp"
 
-#include <memory>
 
 class alignas(sizeof(float_t)) GUI final{
 private:
@@ -25,17 +24,25 @@ private:
 	//std::unique_ptr<Window> window_ = nullptr;
 	//std::unique_ptr<Cursor> cursor_ = nullptr;
 
+	
+
 	int major_version_ = 0;
 	int minor_varsion_ = 0;
 	int revision_ = 0;
 
+	bool is_supported_vulkan_ = false;
+
 public:
-	
+	const bool isSupportedVulkan() const noexcept(false){
+		return is_supported_vulkan_;
+	}
 
 
 
 private:
 	const bool initializeGLFW() noexcept(false);
+
+
 
 
 };
